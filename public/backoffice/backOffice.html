@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>eGovERA&copy;</title>
+
+  <link href="../vendo/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet" />
+
+  <link href="../css/sb-admin-2.min.css" rel="stylesheet" />
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/loginModal.css" />
+  <!-- <link rel="stylesheet" href="mycss.css" /> -->
+  <link rel="stylesheet" href="backoffice.css" />
+</head>
+
+<body id="page-top">
+  <div id="wrapper">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar"></ul>
+
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div class="container-fluid" style="flex: 1 0 auto;">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <div>
+            <h1>Back office features</h1>
+          </div>
+          <img src="../img/european_commission.svg_.png" alt="European Commission" style="width: 100px;" class="ml-auto mr-2">
+          <div id="login-btn" style="margin: 15px 15px 0 0"></div>
+          <div id="google_translate_element"></div>
+        </div>
+        <div class="row justify-content-center">
+          <form id="form" enctype="multipart/form-data">
+            <div id="input-div">
+              <div class="container">
+                <div id="all-in-one-file-div">
+                  <div class="row">
+                    <label for="all-in-one-file"> </label>
+                  </div>
+                  <div class="row">
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        class="far fa-folder-open"></i>
+                      <input type="file" name="all-in-one-file" id="all-in-one-file" accept=".csv, .xlsx" />
+                    </a>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <button class="btn btn-primary mt-4" type="submit">
+                    Submit
+                  </button>
+                </div>
+              </div>
+              <div class="row">
+                <p id="error" class="text-danger d-none">
+                  *Please choose a file for both fields
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="footer"></div>
+    </div>
+  </div>
+  <div class="scroll-to-top rounded">
+    <div class="scroll-to-top-icon-container">
+      <i class="fas fa-angle-up"></i>
+    </div>
+    <div class="scroll-to-top-text-container">
+      <span>Go to Top</span>
+    </div>
+  </div>
+
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script>
+  <script src="../vendo/jquery/jquery.min.js"></script>
+  <script src="../vendo/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendo/jquery-easing/jquery.easing.min.js"></script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        },
+        "google_translate_element"
+      );
+    }
+  </script>
+
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script src="../JSBuild/requests.js"></script>
+  <script src="../JSBuild/authentication.js"></script>
+  <script src="../JSBuild/customElements.js"></script>
+
+  <script src="../JSBuild/loginModal.js"></script>
+  <script src="../JSBuild/loginButton.js"></script>
+
+  <script src="../JSBuild/authenticationModal.js"></script>
+
+  <script src="../JSBuild/backOffice.js"></script>
+
+  <script src="../js/sb-admin-2.min.js"></script>
+</body>
+
+</html>

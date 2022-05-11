@@ -1,0 +1,61 @@
+/* Login Moda; */
+
+#avatar {
+  width: 35%;
+}
+
+#as-admin {
+  color: #1a377a;
+  text-decoration: underline;
+}
+
+#as-user {
+  width: 80%;
+  height: 3rem;
+  font-weight: bold;
+  background-color: #133176;
+}
+
+#modal-title {
+  color: #264281;
+}
+
+.custom-row-styling {
+  margin: 2rem 0;
+}
+
+.custom-row-styling:first-child {
+  margin-top: 0;
+}
+
+.custom-row-styling input {
+  margin: 1rem 0;
+  width: 80%;
+  height: 3rem;
+  border: 1px solid #c7c7c7;
+}
+
+.custom-row-styling input::placeholder {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.35rem;
+
+  color: #d9d9d9;
+}
+
+/* This is for edge , and the next is for internet exproler, 
+  * the only differnces is the second colon(:) */
+
+.custom-row-styling input::-ms-input-placeholder {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.35rem;
+  color: #d9d9d9;
+}
+
+.custom-row-styling input:-ms-input-placeholder {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.35rem;
+  color: #d9d9d9;
+}

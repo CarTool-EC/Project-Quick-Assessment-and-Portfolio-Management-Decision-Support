@@ -1,0 +1,296 @@
+.budget-label {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  padding-top: 0.5rem;
+  color: #d1d3e2;
+}
+
+.budget-input {
+  border: 1px solid #d1d3e2;
+  border-radius: 0.35rem;
+}
+
+.budget-error {
+  padding: 5px;
+  color: red;
+}
+
+#save-work-btn {
+  margin-right: 0.35rem;
+}
+
+#simpleCard button {
+  border: 2px solid #4e6498;
+}
+
+#simpleCard button:focus {
+  background-color: #a6a6a6;
+  color: white;
+  border: 2px solid #a6a6a6;
+}
+
+.progress-bar-buttons,
+.progress-bar-divs {
+  height: 4.8em;
+  overflow: hidden;
+  background-color: #f2f2f2;
+  color: #b4b4b4;
+  border: 3px solid #bfbfbf;
+
+  font-size: 0.9rem;
+  padding: 0 1em;
+  text-align: center;
+}
+
+.progress-bar-buttons-active,
+.progress-bar-divs-active {
+  background-color: #bfbfbf;
+  color: #f2f2f2;
+  font-weight: bold;
+}
+.progress-bar-buttons-active,
+.progress-bar-divs-active {
+  background-color: rgb(78, 115, 223);
+  border: 3px solid rgb(78, 115, 223);
+}
+
+.progress-bar-buttons-current-active,
+.progress-bar-divs-current-active {
+  background-color: rgb(78, 115, 223);
+  color: #f2f2f2;
+  border: 3px solid rgb(228, 26, 26);
+}
+
+.progress-bar-buttons {
+  width: inherit;
+  margin-left: 10px;
+}
+
+.progress-bar-buttons:first-child {
+  margin-left: 0;
+}
+
+.btn-secondary {
+  background-color: #bfbfbf;
+}
+
+.progress-bar-divs {
+  height: inherit;
+  font-size: 1.5rem;
+
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.progress-bar-divs > p {
+  margin: 0 0 0 1em;
+}
+
+.access-controls {
+  background-color: #fff;
+  z-index: 100;
+  background-color: #f6f6f6;
+}
+
+.padding-top-20 {
+  padding-top: 20px;
+}
+
+.inherit-color {
+  color: inherit;
+}
+
+.collapse.show > .card-body {
+  min-height: 290px;
+}
+
+#pageSelector {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#survey-titles {
+  margin: 1em 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#access-controls {
+  position: fixed;
+  padding: 0;
+  left: 150px;
+  right: 61px;
+  top: 129px;
+}
+#surveyContainer {
+  margin-top: 270px;
+}
+
+#google_translate_element > div > div > img {
+  display: none;
+}
+
+.disable-choices {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.disable-choices[type] {
+  background-color: #ddd;
+}
+
+.skip-checkbox {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-60%, -50%);
+  height: 35px;
+  width: 35px;
+  background-color: #eee;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.skip-checkbox::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00c";
+  font-size: 1.2rem;
+  color: #fff;
+  display: none;
+}
+
+.skip-checkbox:checked {
+  background-color: green;
+}
+
+.skip-checkbox:checked::after {
+  display: block;
+}
+
+.table-parent-event > td:nth-child(2) {
+  color: #eeeeee;
+}
+
+.table-parent-event .btn-group {
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.table-parent-event input:not([type="checkbox"]) {
+  pointer-events: none;
+  background-color: #5553;
+}
+
+.policy-images {
+  height: 2.4rem;
+}
+
+.health-policy-images {
+  content: url("../img/health.png");
+}
+
+.tax-policy-images {
+  content: url("../img/tax.png");
+}
+.business-agnostic-policy-images {
+  content: url("../img/tech.png");
+}
+
+.custom-avg-input {
+  width: 90px;
+  text-align: center;
+}
+
+.custom-avg-p {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.sv_q_required_text {
+  display: none;
+}
+
+#surveyContainer h4 {
+  display: none;
+}
+
+.collapse-button {
+  background: inherit;
+  border: none;
+  outline: none;
+  height: 100%;
+}
+
+.collapse-button::after,
+.down-arrow::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #000;
+  outline: none;
+}
+
+.collapse-button[aria-expanded="true"]::after {
+  content: "\f106";
+}
+
+.collapse-button[aria-expanded="false"]::after,
+.down-arrow::after {
+  content: "\f107";
+}
+
+/* .sv_row:last-child thead th:last-child {
+  width: 320px !important;
+}
+ */
+.collapse > .sv_qstn_error_top {
+  display: none !important;
+}
+
+[data-bind="css: question.cssContent"] > .alert {
+  display: none;
+}
+
+.sv_row th:last-child {
+  width: fit-content;
+}
+
+.survey-loading-modal-body {
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttons-in-top {
+  margin-left: 0 !important;
+}
+
+.diff-class {
+}
+
+.non-applicable-activated {
+  background-color: rgb(228, 26, 26);
+}
+
+.hide {
+  display: none;
+}
+
+.view-avg {
+}
+
+.disable-div {
+  pointer-events: none;
+}

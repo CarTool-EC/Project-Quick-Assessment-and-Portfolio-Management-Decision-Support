@@ -1,0 +1,22 @@
+#input-div {
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+#input-div div {
+  margin-top: 1rem;
+}
+
+select {
+  color: #a6a6a6;
+  border-color: #a6a6a6;
+}
+
+#content {
+  padding: 0.5rem;
+  margin: 3rem 3rem 0 3rem;
+}
+
+#google_translate_element > div > div > img {
+  display: none;
+}

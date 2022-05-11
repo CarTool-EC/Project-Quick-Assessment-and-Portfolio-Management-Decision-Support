@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <link href="../vendo/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet" />
+  <link href="../css/sb-admin-2.min.css" rel="stylesheet" />
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/loginModal.css" />
+  <link rel="stylesheet" href="roadmap.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+    integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+    crossorigin="anonymous"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script> -->
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.3/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js"></script>
+
+  <title>Portfolio Management Tool</title>
+</head>
+
+<body id="page-top">
+  <div id="wrapper">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar"></ul>
+
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <div class="container-fluid" style="padding-top: 20px">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 id="header-test" class="h3 mb-0 text-gray-800">
+              2. Quick Project/s Management
+            </h1>
+            <div id="content-test" class="row mr-5">
+              <div class="sectionpdfdiv" style="display: none">
+                <button class="sectionpdfbutton" id="pdfButton">
+                  <span class="download-btn-txt" id="pdfButtonTxt">Export the survey results in PDF</span>
+                </button>
+              </div>
+              <button id="reset-work" class="btn btn-primary mr-2 d-none" type="reset"
+                style="height: 80%; margin-top: 2%">
+                Reset work
+              </button>
+              <a id="file-selector-link" href="#"
+                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm col-6"
+                style="height: 80%; margin-top: 2%"><i class="far fa-folder-open" data-toggle="tooltip"
+                  data-placement="left" title="Choose the capability assessment result"></i>
+                <input type="file" id="file-selector" accept=".txt, .json, .csv" data-toggle="tooltip"
+                  data-placement="left" title="Choose the capability assessment result" /></a>
+              <img src="../img/european_commission.svg_.png" alt="European Commission" style="width: 100px;"
+                class="ml-2 mr-2">
+              <div id="login-btn" class="col-2"></div>
+              <div id="google_translate_element" class="col-2 pt-2"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="card shadow mb-4">
+                <a href="#collapseCardExample3" class="d-block card-header py" data-toggle="collapse" role="button"
+                  aria-expanded="false" aria-controls="collapseCardExample3">
+                  <h6 class="m-0 font-weight-bold text-primary text-center">
+                    Quick Project/s Management
+                  </h6>
+                </a>
+                <div id="egovera-portofolio" class="container-fluid d-none">
+                  <div class="row">
+                    <div class="col-xl-7">
+                      <div class="table-responsive">
+                        <table class="table table-hover table-sm" id="bcTable" width="100%" cellspacing="0"
+                          style="font-size: 14px; padding-bottom: 0px"></table>
+                      </div>
+                    </div>
+                    <div class="col-xl-5">
+                      <div class="collapse" id="matrixBCs">
+                        <div class="card-body" id="dashboard_div" style="padding-bottom: 0px; padding-top: 0px">
+                          <div class="filters-div">
+                            <div id="visibility_control_div" class=""></div>
+                            <div id="x-axis-div" class="">
+                              <div class="select-input">
+                                <div>
+                                  <span id="policy-filter-span" class="goog-combobox goog-inline-block"><input name=""
+                                      type="text" autocomplete="off" label="Change the x axis"
+                                      placeholder="Change the x axis" aria-label="Change the x axis"
+                                      class="label-input-label" /><span class="goog-combobox-button"
+                                      style="user-select: none">▼</span>
+                                    <div class="goog-menu goog-menu-vertical" role="menu" aria-haspopup="true"
+                                      style="user-select: none; display: none">
+                                      <div value="Strategy Fit" class="goog-menuitem" role="menuitem"
+                                        style="user-select: none" id=":g">
+                                        <div class="goog-menuitem-content" style="user-select: none">
+                                          Strategy Fit
+                                        </div>
+                                      </div>
+                                      <div value="Expected public value" class="goog-menuitem" role="menuitem"
+                                        style="user-select: none" id=":h">
+                                        <div class="goog-menuitem-content" style="user-select: none">
+                                          Expected public value
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
+                                </div>
+                                <span style="margin: 0.75rem 0 0 0.62rem" data-toggle="tooltip" data-placement="top"
+                                  title="Drop down list that let to select what is displayed in the x axis: or national digital strategy fit or expected public value">
+                                  <i class="fa fa-question-circle text-primary"></i>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="chart-area d-flex justify-content-center notranslate" id="quadrant_div"></div>
+
+                            <h6 class="filter-header">
+                              Filter the <a target="_blank"
+                                href="https://joinup.ec.europa.eu/taxonomy/term/http_e_f_fdata_ceuropa_ceu_fdr8_fDigitalBusinessCapability "
+                                title="Digital Capabilities are the key skills and capabilities a company or a Government requires to transform itself into a sustainable and successful business by considering digital technology as the enabling component">digital
+                                business capabilities</a> with
+                              the following parameters:
+                            </h6>
+                            <div id="dashboard_strategicSlider_div"></div>
+                            <div id="dashboard_expPubValSlider_div"></div>
+                            <div id="dashboard_abiToSupdBusCapSlider_div"></div>
+                            <div id="budget_filtering_div"></div>
+                          </div>
+                          <hr />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" style="display:none">
+            <div class="col-xl-12 col-lg-12">
+              <div class="card shadow mb-4">
+                <a href="#collapseCardExample2" class="d-block card-header py" data-toggle="collapse" role="button"
+                  aria-expanded="false" aria-controls="collapseCardExample2">
+                  <h6 class="m-0 font-weight-bold text-primary text-center">
+                    eGovERA&copy; digital transformation roadmap decision
+                    support
+                  </h6>
+                </a>
+                <div class="collapse" id="networkBBs">
+                  <div class="card-body">
+                    <div id="dps-netwok">
+
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <div id="dps-network-info">
+                            <div>
+                              <p style="height: 48px; margin-bottom: 0.5rem">
+                                <b>Digital business capability:</b>
+                              </p>
+                              <div id="dps-network-bc-info"></div>
+                            </div>
+
+                            <p class="mt-1 mb-1">
+                              <b>Digital public services in scope:</b>
+                            </p>
+                            <div class="dps-select-div mt-2" id="dps-select-info">
+                              <ul></ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-9 adjust-heights">
+                          <div class="chart-area" style="border: 1px solid lightgray; height: 100%"
+                            id="dps-network-div"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+
+                    <div id="bc-network">
+                      <p class="align-instructions text-primary">
+                        <b>Click on the steps of the Digital Transformation
+                          Roadmap where you need further detail</b>
+                      </p>
+                      <div class="row adjust-heights">
+                        <div class="col-sm-3">
+                          <div id="network_control">
+                            <p>
+                              <b>Selected digital business capability:</b>
+                            </p>
+                            <p id="bcDetail"></p>
+                            <hr />
+                            <div class="row">
+                              <p class="col-9">
+                                <b>Implementation orientation for the digital
+                                  transformation:</b>
+                              </p>
+                              <div class="ml-3">
+                                <span class="custom-tooltip col-3">
+                                  <i class="fa fa-question-circle text-primary"></i>
+                                  <span class="custom-tooltip-text">
+                                    <ul class="ul-tooltip">
+                                      <li>L: Legal</li>
+                                      <li>O: Organisational</li>
+                                      <li>S: Semantic</li>
+                                      <li>TA: Technical Application</li>
+                                      <li>TI: Technical Infrastructure</li>
+                                    </ul>
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="form-check form-check-group" id="orientation">
+                              <div class="row">
+                                <div class="h-25 d-inline-block orientation-label col-9">
+                                  <input name="gruppo1" type="radio" id="radio1" value="1" checked="true" />
+                                  <label for="radio1" tooltip="sub">Legal (predefined)</label>
+                                </div>
+
+                                <span data-toggle="tooltip" data-placement="top" class="ml-4"
+                                  title="A member state has a legal orientation when its first priority, in the digital public service design, is to address and implement legal requirements.">
+                                  <i class="fa fa-question-circle text-primary"></i>
+                                </span>
+                              </div>
+                              <div class="row">
+                                <div class="h-25 d-inline-block orientation-label col-9">
+                                  <input name="gruppo1" type="radio" id="radio2" value="2" />
+                                  <label for="radio2">Organisational/Governance</label>
+                                </div>
+                                <span data-toggle="tooltip" data-placement="top" class="ml-4"
+                                  title="A member state has a governance orientation when its first priority, in the digital public service design, is to address the possible channels for the public service delivery, and the definition of Governance model.">
+                                  <i class="fa fa-question-circle text-primary"></i>
+                                </span>
+                              </div>
+                              <div class="row">
+                                <div class="h-25 d-inline-block orientation-label col-9">
+                                  <input name="gruppo1" type="radio" id="radio3" value="3" />
+                                  <label for="radio3">Semantic/Integration</label>
+                                </div>
+                                <span data-toggle="tooltip" data-placement="top" class="ml-4"
+                                  title="A member state has a integration orientation when its first priority, in the digital public service design, it is to address the possible source of data (e.g. base registry, data set, ontologies, etc..), how data will be exchanged and to define guidelines and agreements for the sharing data.">
+                                  <i class="fa fa-question-circle text-primary"></i>
+                                </span>
+                              </div>
+                              <div class="row">
+                                <div class="h-25 d-inline-block orientation-label col-9">
+                                  <input name="gruppo1" type="radio" id="radio4" value="4" />
+                                  <label for="radio4">Technical</label>
+                                </div>
+                                <span data-toggle="tooltip" data-placement="top" class="ml-4"
+                                  title="A member state has a technical orientation when its first priority, in the digital public service design, it is to address the possibility to reuse/share software components (e.g. registry services, reusable building blocks, common services, etc..), to address the exchanging capabilities of data (e.g. interfaces) and to the define technical interoperability agreements.">
+                                  <i class="fa fa-question-circle text-primary"></i>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="container-fluid" style="padding: 0; margin-top: 1em">
+                              <p>
+                                <b>
+                                  <h5>
+                                    For a suggested implementation orientation
+                                    click
+                                    <a target="_blank" href="https://idpsio-test.herokuapp.com/">here</a>
+                                  </h5>
+                                </b>
+                              </p>
+                              <div class="row" style="margin-bottom: 0.6em">
+                                <div class="col-9">
+                                  <b>Show business agnostic nodes </b>
+                                </div>
+                                <div class="col-3">
+                                  <input type="checkbox" checked data-toggle="toggle" data-size="small"
+                                    id="infratoogle" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-9 adjust-heights">
+                          <div class="chart-area" style="border: 1px solid lightgray; height: 100%" id="network_div">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+
+                    <div id="networkBBs2" style="display: none">
+                      <p class="align-instructions text-primary">
+                        <b>
+                          Assessment of the functionalities supporting the
+                          digital business capability</b>
+                      </p>
+                      <div class="row">
+                        <div class="col-xl col-lg" style="height: 450px" id='graph3_info'>
+                          <div id="networkBBs2-dbc-info">
+                            <p>
+                              <b>Selected digital business capability:</b>
+                            </p>
+                            <div class="info"></div>
+                          </div>
+                          <hr class="hr-styling" />
+                          <div id="networkBBs2-dps-info">
+                            <p><b>Selected digital public service(s):</b></p>
+                            <div class="info" id="selected-service-info"></div>
+                          </div>
+                          <hr class="hr-styling" />
+                          <div id="networkBBs2-view-info">
+                            <p>
+                              <b>Selected orientation:</b>
+                            </p>
+                            <p id="viewDetail"></p>
+                            <hr class="hr-styling" />
+                            <div class="row">
+                              <p class="col-9">
+                                <b>Selected building block:</b>
+                              </p>
+                              <div class="ml-3">
+                                <span class="custom-tooltip col-3">
+                                  <i class="fa fa-question-circle text-primary"></i>
+                                  <span class="custom-tooltip-text">
+                                    <p>
+                                      The content of the nodes (expressed by
+                                      the blue color) is variable because it
+                                      reflects the relation between the ABBs
+                                      and the “ability to support the
+                                      dBusCaps”:
+                                    </p>
+                                    <div class="row">
+                                      <img src="../img/rank/10.png" alt="" class="col-3 ml-3 h-100" />
+                                      <p class="col-8">
+                                        The member state totally owns the
+                                        specific capabilities/skill/experience
+                                        of the selected ABB to support the
+                                        Digital Business capabilities
+                                      </p>
+                                    </div>
+
+                                    <div class="row pb-2">
+                                      <img src="../img/rank/5.png" alt="" class="col-3 ml-3 h-100" />
+                                      <p class="col-8">
+                                        The member state partially owns the
+                                        capabilities needed to support the
+                                        related digital business capability
+                                      </p>
+                                    </div>
+                                    <div class="row">
+                                      <img src="../img/rank/0.png" alt="" class="col-3 ml-3 h-100" />
+                                      <p class="col-8">
+                                        The member state does not owns at all
+                                        the specific capabilities to support
+                                        the related Business capabilities
+                                      </p>
+                                    </div>
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                            <p id="bbDetail"></p>
+                          </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9 position-relative" style="height: 450px">
+                          <div class="chart-area" style="height: 450px; border: 1px solid lightgray" id="network_div2">
+                          </div>
+                          <div class="networkBBs2-no-results alert alert-danger">
+                            There are no building blocks available for the
+                            filter combination selected
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="bb-div" class="col-xl-12 col-lg-12 d-none">
+                  <div class="table-responsive">
+                    <h6 class="m-0 font-weight-bold text-primary text-center h4"
+                      title="TOGAF® defines a building block as a package of functionality defined to meet business needs.">
+                      eGovERA&copy; Building Blocks
+                    </h6>
+                    <table class="table table-hover" id="bbTable" width="100%" cellspacing="0"
+                      style="font-size: 14px; padding: 0px"></table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer"></div>
+    </div>
+  </div>
+
+  <!-- <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a> -->
+  <div class="scroll-to-dps rounded">
+    <div class="scroll-to-top-icon-container">
+      <i class="fas fa-angle-up"></i>
+    </div>
+    <div class="scroll-to-top-text-container">
+      <span>Go to DPS</span>
+    </div>
+  </div>
+  <div class="scroll-to-top rounded">
+    <div class="scroll-to-top-icon-container">
+      <i class="fas fa-angle-up"></i>
+    </div>
+    <div class="scroll-to-top-text-container">
+      <span>Go to Top</span>
+    </div>
+  </div>
+
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Select "Logout" below if you are ready to end your current session.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">
+            Cancel
+          </button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script>
+
+  <script type="text/javascript" src="../vendo/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="../vendo/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script type="text/javascript" src="../vendo/jquery-easing/jquery.easing.min.js"></script>
+
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+  <script type="text/javascript" src="../vendo/chart.js/Chart.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <script type="text/javascript" src="https://unpkg.com/vis-network@7.7.0/standalone/umd/vis-network.min.js"></script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        },
+        "google_translate_element"
+      );
+    }
+  </script>
+
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script src="../JSBuild/requests.js"></script>
+  <script src="../JSBuild/authentication.js"></script>
+  <script src="../JSBuild/customElements.js"></script>
+
+  <script src="../JSBuild/loginModal.js"></script>
+  <script src="../JSBuild/loginButton.js"></script>
+
+  <script src="../JSBuild/authenticationModal.js"></script>
+
+  <script src="../JSBuild/roadmap.js"></script>
+
+  <script src="../js/sb-admin-2.min.js"></script>
+</body>
+
+</html>

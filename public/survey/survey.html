@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <link href="../vendo/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet" />
+  <link href="../css/sb-admin-2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/loginModal.css" />
+  <link rel="stylesheet" href="../css/mycss.css" />
+  <link rel="stylesheet" href="survey.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js"></script>
+  <title>Portfolio Management Tool</title>
+</head>
+
+<body id="page-top">
+  <div id="wrapper">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar"></ul>
+
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <div class="container-fluid" style="padding-top: 20px">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4" id="divtitle">
+            <h1 class="h3 mb-0 text-gray-800">1. Quick Project/s Assessment</h1>
+            <img src="../img/european_commission.svg_.png" alt="European Commission" style="width: 100px;"
+              class="ml-auto mr-2">
+            <div id="login-btn"></div>
+            <div id="google_translate_element"></div>
+          </div>
+          <div class="row">
+            <div class="col-xl col-lg">
+              <div class="card shadow mb-4">
+                <div class="collapse show" id="initForm">
+                  <div class="card-body">
+                    <div id="checkinContainer">
+                      <button id="upload-file-btn" class="btn btn-primary" type="submit">
+                        <label for="file" class="btn btn-primary">Upload Previous Work</label>
+                        <input type="file" id="previous-work-file" accept=".csv" name="filename">
+                      </button>
+                      <br id="br-1">
+                      <br id="br-2">
+                      <form id="checkinForm" class="needs-validation" novalidate>
+
+                        <p>
+                          <b>Please insert Project's information:</b>
+                        </p>
+                        <!-- <div class="form-row"> -->
+                        <div>
+
+                          <!-- <div class="col-md-3 mb-3">
+                            <label for="validationCustom01">Full name</label>
+                            <input type="text" class="form-control" id="validationCustom01"
+                              placeholder="First/last name" required />
+                            <div class="valid-feedback">correct</div>
+                          </div>
+
+                          <div class="col-md-3 mb-3">
+                            <label for="validationCustom02">Organisation</label>
+                            <input type="text" class="form-control" id="validationCustom03" placeholder="Organisation"
+                              required />
+                            <div class="valid-feedback">correct</div>
+                          </div>
+
+                          <div class="col-md-3 mb-3">
+                            <label for="validationCustom02">Organisation email</label>
+                            <input type="text" class="form-control" id="validationCustom04" placeholder="email"
+                              required />
+                            <div class="valid-feedback">correct</div>
+                          </div>
+
+                          <div class="col-md-3 mb-3">
+                            <label for="validationCustom02">Country</label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="Country"
+                              required />
+                            <div class="valid-feedback">correct</div>
+                          </div> -->
+
+                          <div>
+                            <label for="validationCustom01" id="name01"><b>ID</b></label>
+                            <p>Please indicate the <b>ID</b> of the project/s to be developed</p>
+                            <input type="text" class="form-control col-md-2 mb-2" id="validationCustom01"
+                              placeholder="Project's ID" required />
+                            <div class="valid-feedback">correct</div>
+                          </div>
+                          <br>
+
+                          <div>
+                            <label for="validationCustom02" id="name02"><b>Domain</b></label>
+                            <p>Please indicate the <b>Domain</b> of the project/s to be developed</p>
+                            <input type="text" class="form-control col-md-2 mb-2" id="validationCustom02"
+                              placeholder="Project's Domain" required />
+                            <div class="valid-feedback">correct</div>
+                          </div>
+                          <br>
+
+                          <div>
+                            <label for="validationCustom03" id="name03"><b>Name</b></label>
+                            <p>Please indicate the <b>Name</b> of the project/s to be developed</p>
+                            <input type="text" class="form-control col-md-2 mb-2" id="validationCustom03"
+                              placeholder="Project's Name" required />
+                            <div class="valid-feedback">correct</div>
+                          </div>
+                          <br>
+
+                          <div>
+                            <label for="validationCustom04" id="name04"><b>Strategy Fit</b></label>
+                            <div>
+                              <p>Please indicate the <b>Strategy Fit</b> of the project/s to be developed (1 lowest, 5
+                                highest)</p>
+                              <form>
+                                <select id="validationCustom04">
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                </select>
+                              </form>
+                            </div>
+                            <!-- <input type="text" class="form-control" id="validationCustom04"
+                              placeholder="Project's Strategy Fit" required /> -->
+                            <div class="valid-feedback">correct</div>
+                          </div>
+                          <br>
+
+                          <div>
+                            <label for="validationCustom05" id="name05"><b>Status Quo Efficacy</b></label>
+                            <div>
+                              <p>Please indicate the <b>Status Quo Efficacy</b> of the project/s to be developed (0
+                                lowest, 5 highest)</p>
+                              <form class="col-md-4 mb-4">
+                                <select id="validationCustom05">
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                </select>
+                              </form>
+                            </div>
+                            <!-- <input type="text" class="form-control" id="validationCustom05"
+                              placeholder="Project's Status Quo Efficacy" required /> -->
+                            <div class="valid-feedback">correct</div>
+                          </div>
+
+                          <div>
+                            <label for="validationCustom06" id="name06"><b>Target Efficacy</b></label>
+                            <div>
+                              <p>Please indicate the <b>Target Efficacy</b> of the project/s to be developed (1 lowest,
+                                5 highest)</p>
+                              <form class="col-md-4 mb-4">
+                                <select id="validationCustom06">
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                </select>
+                              </form>
+                            </div>
+                            <!-- <input type="text" class="form-control" id="validationCustom06"
+                              placeholder="Project's Target Efficacy" required /> -->
+                            <div class="valid-feedback">correct</div>
+                          </div>
+
+                          <div>
+                            <label for="validationCustom07" id="name07"><b>Expected Public Value</b></label>
+                            <div>
+                              <p>
+                                Please indicate the <b>Expected Public Value</b> of the project/s to be developed (1
+                                lowest, 5 highest)</p>
+                              <form class="col-md-4 mb-4">
+                                <select id="validationCustom07">
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                </select>
+                              </form>
+                            </div>
+                            <!-- <input type="text" class="form-control" id="validationCustom07"
+                              placeholder="Project's Expected Public Value" required /> -->
+                            <div class="valid-feedback">correct</div>
+                          </div>
+
+
+                          <div>
+                            <label for="validationCustom08" id="name08"><b>Estimated Budget</b></label>
+                            <p>Please indicate the <b>Estimated Budget</b> you would like to invest/allocate on this
+                              project/s</p>
+                            <input type="number" class="form-control col-md-2 mb-2" id="validationCustom08"
+                              placeholder="Project's Estimated Budget" required />
+                            <div class="valid-feedback">correct</div>
+                          </div>
+
+
+                        </div>
+
+                        <br />
+                        <!-- <p>
+                          <b>Please select at least one or more policy domains
+                            for the assessement:</b>
+                        </p> -->
+                        <!-- <div id="checkboxes" class="form-check-group"></div> -->
+                        <!-- <br /> -->
+                        <!-- <div class="form-check-group d-flex"> -->
+                        <button id="previous-project-btn" class="btn btn-primary" type="submit" style="display: none">
+                          Previous Project
+                        </button>
+                        <button id="next-project-btn" class="btn btn-primary" type="submit">
+                          Next Project
+                        </button>
+                        <button id="complete-btn" class="btn btn-primary" type="submit">
+                          Complete
+                        </button>
+                        <button id="save-work-btn" class="btn btn-primary" type="submit">
+                          Save Work
+                        </button>
+                        <!-- <div class="spinner-border text-primary d-none" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div> -->
+
+                        <!-- <div class="ml-auto">
+                            <label><b>Load previous work</b></label>
+                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="far fa-folder-open" data-toggle="tooltip" data-placement="left"
+                                title="Load previous work"></i>
+                              <input type="file" id="previous-work" accept=".json" data-toggle="tooltip"
+                                data-placement="left" title="Load previous work" />
+                            </a>
+                          </div> -->
+                        <!-- </div> -->
+                        <!-- <p class="alert alert-danger d-none" id="connection-error">
+                          Could not fetch the data from the server
+                        </p>
+                        <p class="alert alert-danger d-none" id="previous-work-error">
+                          Unable to load the file
+                        </p> -->
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xl col-lg">
+              <div class="card shadow mb-4">
+                <div class="collapse" id="surveyCard">
+                  <div class="card-body">
+                    <div id="access-controls" class="">
+                      <div id="survey-titles"></div>
+                      <div id="pageSelector"></div>
+                      <div class="progress mt-3 mb-3">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                          aria-valuemax="100"></div>
+                      </div>
+                      <span id="buttons-in-top" class="ml-3"></span>
+                      <div class="spinner-border text-primary d-none" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
+                    </div>
+                    <div id="surveyContainer"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="dbcInstructions" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-primary font-weight-bold col-11 text-center" id="exampleModalLongTitle">
+                DIGITAL
+                BUSINESS CAPABILITIES OVERVIEW
+              </h5>
+              <button type="button" class="close col-1" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div>Please indicate the <a class="text-primary"
+                  title="It reports the strategic priority assigned to the digital business capability by the national digital agenda of the country.">National
+                  Digital Strategic Fit*</a> for each <a target="_blank"
+                  href="https://joinup.ec.europa.eu/taxonomy/term/http_e_f_fdata_ceuropa_ceu_fdr8_fDigitalBusinessCapability "
+                  title="Digital Capabilities are the key skills and capabilities a company or a Government requires to transform itself into a sustainable and successful business by considering digital technology as the enabling component">Digital
+                  Business Capabilities</a>, taking
+                into account the following <b>instructions:</b></div>
+              <ul>
+                <li>You are asked to prioritise all the <a target="_blank"
+                    href="https://joinup.ec.europa.eu/taxonomy/term/http_e_f_fdata_ceuropa_ceu_fdr8_fDigitalBusinessCapability "
+                    title="Digital Capabilities are the key skills and capabilities a company or a Government requires to transform itself into a sustainable and successful business by considering digital technology as the enabling component">Digital
+                    Business Capabilities</a>
+                  for the selected policy domain,
+                  according to the <a class="text-primary"
+                    title="It reports the strategic priority assigned to the digital business capability by the national digital agenda of the country.">National
+                    Digital Strategic Fit</a> that you as a Member
+                  state assign to the specific
+                  <a target="_blank"
+                    href="https://joinup.ec.europa.eu/taxonomy/term/http_e_f_fdata_ceuropa_ceu_fdr8_fDigitalBusinessCapability "
+                    title="Digital Capabilities are the key skills and capabilities a company or a Government requires to transform itself into a sustainable and successful business by considering digital technology as the enabling component">Digital
+                    Business Capabilities</a>
+                </li>
+                <li>You can choose to address only some <a target="_blank"
+                    href="https://joinup.ec.europa.eu/taxonomy/term/http_e_f_fdata_ceuropa_ceu_fdr8_fDigitalBusinessCapability "
+                    title="Digital Capabilities are the key skills and capabilities a company or a Government requires to transform itself into a sustainable and successful business by considering digital technology as the enabling component">Digital
+                    Business Capabilities</a>
+                  and to exclude any of them in
+                  the evaluation process using the <span class="text-success">green button</span> on the left side of
+                  the <a target="_blank"
+                    href="https://joinup.ec.europa.eu/taxonomy/term/http_e_f_fdata_ceuropa_ceu_fdr8_fDigitalBusinessCapability "
+                    title="Digital Capabilities are the key skills and capabilities a company or a Government requires to transform itself into a sustainable and successful business by considering digital technology as the enabling component">Digital
+                    Business Capabilities</a>
+                  list. In particular, if one or more <a target="_blank"
+                    href="https://joinup.ec.europa.eu/taxonomy/term/http_e_f_fdata_ceuropa_ceu_fdr8_fDigitalBusinessCapability "
+                    title="Digital Capabilities are the key skills and capabilities a company or a Government requires to transform itself into a sustainable and successful business by considering digital technology as the enabling component">Digital
+                    Business Capability</a>,
+                  doesn’t play a strategic role in your
+                  national agenda, then its assessment might be skipped. </li>
+              </ul>
+              <div><b>Definitions:</b></div>
+              <p><b>Digital Business Capabilities:</b> A particular digital ability or capacity that an organisation may
+                possess or exchange to achieve a specific purpose or outcome</p>
+              <p><b>National Digital Strategy Fit:</b> It reports the strategic priority assigned to the digital
+                business
+                capability by the national digital agenda of the country</p>
+              <div>
+                <p>*Score for the <a class="text-primary"
+                    title="It reports the strategic priority assigned to the digital business capability by the national digital agenda of the country.">National
+                    Digital Strategic Fit</a> parameter (<b>1 lower, 5 highest</b>):</p>
+                <ol>
+                  <li><b>very low priority</b> (this dBusCap will be taken into account in the future)</li>
+                  <li><b>Low priority</b> (this dBusCap will be developed once the ones with medium priority are
+                    developed)
+                  </li>
+                  <li><b>Medium priority</b> (this dBusCap will be developed once the ones with high priority are
+                    developed)
+                  </li>
+                  <li><b>High priority</b> (this dBusCap will be developed once the ones with very high priority are
+                    developed)
+                  </li>
+                  <li><b>Very high priority</b> (this dBusCap has the highest priority in the development)</li>
+                </ol>
+              </div>
+              <p><b>Non Applicable:</b> By selecting a requirement as "not applicable" one, it will not be
+                considered in the overall assessed ability to support the digital business capability</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div id="footer"></div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="survey-loading-modal" tabindex="-1" role="dialog"
+    aria-labelledby="survey-loading-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body survey-loading-modal-body">
+          <div style="margin-right: 20px">
+            Please wait, the survey is loading the next questions
+          </div>
+
+          <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-to-top rounded">
+    <div class="scroll-to-top-icon-container">
+      <i class="fas fa-angle-up"></i>
+    </div>
+    <div class="scroll-to-top-text-container">
+      <span>Go to Top</span>
+    </div>
+  </div>
+
+  <script
+    src="https://polyfill.io/v3/polyfill.min.js?features=String.prototype.includes%2Cfetch%2CArray.prototype.forEach%2CObject.assign%2CObject.values%2CArray.from"></script>
+
+  <script type="text/javascript" src="../vendo/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="../vendo/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script type="text/javascript" src="../vendo/jquery-easing/jquery.easing.min.js"></script>
+
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet" />
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/survey-jquery/1.7.1/survey.jquery.min.js"
+    integrity="sha512-EYG2oq0Hk9HoUpcRRZT2HcOybGiJhfyQp2sDh2wrNMxYiHijLfocrxe0qHSuj58AWHaAi3EeovgyuAt7UGCdEw=="
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"
+    integrity="sha512-L03kznCrNOfVxOUovR6ESfCz9Gfny7gihUX/huVbQB9zjODtYpxaVtIaAkpetoiyV2eqWbvxMH9fiSv5enX7bw=="
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js"
+    integrity="sha512-cWbIzX5dm6Uyc6jg+DmJTWherzF5usoVXN/3MYggEQhsgfOJdfIPAvz5Ktprf4Gx2HoxVUqMIVDuyBp5PQ1Hwg=="
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        },
+        "google_translate_element"
+      );
+    }
+  </script>
+
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script src="../JSBuild/requests.js"></script>
+  <script src="../JSBuild/requestSurvey.js"></script>
+  <script src="../JSBuild/authentication.js"></script>
+  <script src="../JSBuild/customElements.js"></script>
+
+  <script src="../JSBuild/loginModal.js"></script>
+  <script src="../JSBuild/loginButton.js"></script>
+
+  <script src="../JSBuild/authenticationModal.js"></script>
+
+  <script src="../JSBuild/survey.js"></script>
+
+  <script src="../js/sb-admin-2.min.js"></script>
+</body>
+
+</html>
